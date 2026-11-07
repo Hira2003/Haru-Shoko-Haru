@@ -38,7 +38,7 @@ Log in with the Expo account that can access owner `haruna2003`. The repository 
 
 On the first interactive build, let Expo generate an Android keystore if it asks. Keep using the same project and signing credentials for future updates.
 
-`eas.json` includes a `preview` profile with `android.buildType: "apk"`. Download the resulting APK from the build page and install it on Android. No Play Store account is needed for direct APK installation. The production profile builds an AAB for Play Store distribution.
+`eas.json` includes a `preview` profile with `android.buildType: "apk"`. Download the resulting APK from the build page and install it on Android. No Play Store account is needed for direct APK installation. Both preview and production profiles build an APK for direct installation. For a future Play Store release, use a separate profile with android.buildType set to "app-bundle".
 
 ### Build from GitHub Actions
 
