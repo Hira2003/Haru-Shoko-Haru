@@ -6,18 +6,25 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "android": { "package": "com.hira2003.harushokoharu", "adaptiveIcon": { "foregroundImage": "./assets/icon.png", "backgroundColor": "#f2e5f8" } },
-    "ios": { "supportsTablet": true, "bundleIdentifier": "com.hira2003.harushokoharu" },
-    "web": { "favicon": "./assets/icon.png" }
-    
-  },
-    
-  "owner": "haruna2003",
-"extra": {
-  "eas": {
-    "projectId": "9431a435-7f9c-4bef-accd-ad9650768434"
+    "android": {
+      "package": "com.hira2003.harushokoharu",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#f2e5f8"
+      }
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hira2003.harushokoharu"
+    },
+    "web": {
+      "favicon": "./assets/icon.png"
+    },
+    "owner": "haruna2003",
+    "extra": {
+      "eas": {
+        "projectId": "9431a435-7f9c-4bef-accd-ad9650768434"
+      }
+    }
   }
-}
-
-  
 }
