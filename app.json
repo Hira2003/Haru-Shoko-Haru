@@ -10,4 +10,11 @@
     "ios": { "supportsTablet": true, "bundleIdentifier": "com.hira2003.harushokoharu" },
     "web": { "favicon": "./assets/icon.png" }
   }
+  
+"extra": {
+  "eas": {
+    "projectId": "9431a435-7f9c-4bef-accd-ad9650768434"
+  }
+}
+  
 }
