@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "Haru Shoko Haru",
+    "slug": "haru-shoko-haru",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "android": { "package": "com.hira2003.harushokoharu", "adaptiveIcon": { "foregroundImage": "./assets/icon.png", "backgroundColor": "#f2e5f8" } },
+    "ios": { "supportsTablet": true, "bundleIdentifier": "com.hira2003.harushokoharu" },
+    "web": { "favicon": "./assets/icon.png" }
+  }
+}
