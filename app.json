@@ -10,7 +10,7 @@
     "ios": { "supportsTablet": true, "bundleIdentifier": "com.hira2003.harushokoharu" },
     "web": { "favicon": "./assets/icon.png" }
     
-  }
+  },
     
   "owner": "haruna2003",
 "extra": {
