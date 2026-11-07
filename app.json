@@ -20,7 +20,7 @@
     "web": {
       "favicon": "./assets/icon.png"
     },
-    "owner": "haruna2003",
+    "owner": "haruna",
     "extra": {
       "eas": {
         "projectId": "9431a435-7f9c-4bef-accd-ad9650768434"
