@@ -23,15 +23,39 @@ npx expo start
 
 ## Build an installable APK
 
+Run commands from the repository root: the folder containing `package.json`, `app.json`, and `eas.json`. In an existing clone, pull the latest changes first. For a fresh checkout:
+
 ```sh
+git clone https://github.com/Hira2003/Haru-Shoko-Haru.git
+cd Haru-Shoko-Haru
+npm ci
 npx eas-cli@latest login
-npx eas-cli@latest init
+npx eas-cli@latest project:info
 npm run build:apk
 ```
 
-`init` links the app to your Expo account and writes its real project ID to `app.json`. Commit that change. When asked, let Expo generate an Android keystore. Keep using the same Expo project and signing credentials for future updates.
+Log in with the Expo account that can access owner `haruna2003`. The repository already links to project ID `9431a435-7f9c-4bef-accd-ad9650768434`; do not create a second project or run `init` routinely. `project:info` verifies the existing link. If Expo reports a slug mismatch, compare its project slug with `expo.slug` in `app.json` and use the existing project's actual slug. The GitHub repository name and Expo display name do not have to match.
 
-`eas.json` already includes a `preview` profile with `android.buildType: "apk"`. Download the resulting APK from the build page and install it on Android. No Play Store account is needed for direct APK installation. The production profile builds an AAB for Play Store distribution.
+On the first interactive build, let Expo generate an Android keystore if it asks. Keep using the same project and signing credentials for future updates.
+
+`eas.json` includes a `preview` profile with `android.buildType: "apk"`. Download the resulting APK from the build page and install it on Android. No Play Store account is needed for direct APK installation. The production profile builds an AAB for Play Store distribution.
+
+### Build from GitHub Actions
+
+The workflow is at `.github/workflows/build-apk.yml` and uses Node 22. It is manual so commits do not automatically consume builds.
+
+1. Complete the first interactive build above to configure Android signing credentials. Non-interactive CI cannot answer first-time credential prompts.
+2. Create an Expo access token at https://expo.dev/accounts/haruna2003/settings/access-tokens.
+3. In this GitHub repository, open **Settings → Secrets and variables → Actions → New repository secret**. Name it `EXPO_TOKEN` and paste the token as its value. Never put the token in a file or commit.
+4. Open **Actions → Build Android APK → Run workflow**, select `main`, and start it.
+5. Open the Expo build link in the **Build APK** step to download the finished APK. The APK is hosted by Expo, not uploaded as a GitHub Actions artifact.
+
+### Common command errors
+
+- **Failed to read package.json / ENOENT:** you are likely outside the project folder. Run `pwd` (or `cd` on Windows) and list the files. Change into the directory containing `package.json`. For Expo's GitHub integration, the app base directory is the repository root, not `workflows/` or another nested folder.
+- **eas: command not found:** use `npx eas-cli@latest <command>` rather than bare `eas`. `npm run build:apk` already does this.
+- **Unsupported Node engine:** use Node 22.13+ in the Node 22 line, or another version supported by the installed React Native. Use Codespaces if your computer cannot run modern Node.
+- **Expo project access or slug error:** run `npx eas-cli@latest whoami` and `npx eas-cli@latest project:info`; verify the account and existing project before editing `app.json`.
 
 ## Home-screen app icon
 
