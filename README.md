@@ -91,3 +91,9 @@ Unit tests cover playable starting boards, matching intersections, adjacency, gr
 ## Source and assets
 
 `App.js`: level interface and turn animation. `src/game.js`: pure match-three logic. `tests/`: game rules tests. `assets/`: original chocolate artwork and launcher icon.
+
+## Level 7 special chocolates
+
+Levels 1–6 keep the original 8×8 board. From level 7, the board is 9×9 with a compact header and wider layout. Match four same-color chocolates to earn a bar with a randomly assigned row (↔) or column (↕) direction. Match five or more connected chocolates (including T/L matches) to earn a jar. Include a special in a same-color match to activate it: bars clear their line, jars clear a centered 3×3 area, clipped at edges. Blasts trigger other specials. Newly created specials survive their creation cascade and fall with gravity.
+
+A tutorial appears at level 7; later levels show rotating tips. The ? button reopens the rules. The game still allows 30 moves per level.
